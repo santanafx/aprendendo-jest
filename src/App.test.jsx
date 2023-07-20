@@ -17,7 +17,7 @@ describe("App component", () => {
         screen.getByText("Hello world!");
     });
 
-    it.skip("shoud change message on button click", () => {
+    it("shoud change message on button click", () => {
         render(<App />);
         screen.getByText("Let`s learn more about testing in React");
 
@@ -26,5 +26,13 @@ describe("App component", () => {
         fireEvent.click(button);
 
         screen.getByText(/new message!/i);
+
+        const oldMessage = screen.queryByText(
+            "Let`s learn more about testing in React"
+        ); //nao falha o teste se nao achar o texto.queryByText, .getByText falha o teste
+
+        // expect(oldMessage).toBeNull(); //garante que a msg acima não está na página, ela é nula
+
+        expect(oldMessage).not.toBeInTheDocument();
     });
 });
