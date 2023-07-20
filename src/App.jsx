@@ -1,3 +1,6 @@
+import "./App.css";
+import React from "react";
+
 function App() {
     const meuPedido = {
         itens: [
@@ -26,10 +29,17 @@ function App() {
 
     console.log(calcularValorPedido(meuPedido));
 
+    const [message, setMessage] = React.useState(
+        "Let`s learn more about testing in React"
+    );
+
     return (
         <div>
             <h1>Hello world!</h1>
-            <p>Lets learn more about testing in React</p>
+            <p>{message}</p>
+            <button onClick={() => setMessage("New message!")}>
+                Change message
+            </button>
         </div>
     );
 }

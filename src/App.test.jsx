@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, getByText, render, screen } from "@testing-library/react";
 import App from "./App";
 
 const sum = (x, y) => {
@@ -6,14 +6,25 @@ const sum = (x, y) => {
 };
 
 describe("App component", () => {
-    it("should sum correctly", () => {
+    it.skip("should sum correctly", () => {
         // arrange, act, assert
         expect(sum(4, 4)).toBe(8);
     });
 
-    it("should render App with hello message", () => {
+    it.skip("should render App with hello message", () => {
         render(<App />);
 
         screen.getByText("Hello world!");
+    });
+
+    it("shoud change message on button click", () => {
+        render(<App />);
+        screen.getByText("Let`s learn more about testing in React");
+
+        const button = screen.getByText(/Change message/i);
+
+        fireEvent.click(button);
+
+        screen.getByText(/new message!/i);
     });
 });

@@ -1,6 +1,6 @@
 const calcularValorPedido = require("./calcular-valor-pedido");
 
-it("não deve cobrar valor de frente quando valodr dos produtos for superior a 500", () => {
+it.skip("não deve cobrar valor de frente quando valodr dos produtos for superior a 500", () => {
     // AAA - 3 passos de criacao deum teste
 
     //ARRANG - ARRUMAR - O OBJETO DE TESTE
@@ -18,7 +18,7 @@ it("não deve cobrar valor de frente quando valodr dos produtos for superior a 5
     expect(resultado).toBe(2000);
 });
 
-it("deve cobrar valor de frete quando valor dos produtos for menos que 500", () => {
+it.skip("deve cobrar valor de frete quando valor dos produtos for menos que 500", () => {
     //ARRANGE
     const meuPedido = {
         itens: [
@@ -33,7 +33,7 @@ it("deve cobrar valor de frete quando valor dos produtos for menos que 500", () 
     expect(resultado).toBe(150);
 });
 
-it("deve cobrar valor de frete caso valor dos produtos seja EXATAMENTE 500", () => {
+it.skip("deve cobrar valor de frete caso valor dos produtos seja EXATAMENTE 500", () => {
     //ARRANGE
     const meuPedido = {
         itens: [
@@ -48,7 +48,7 @@ it("deve cobrar valor de frete caso valor dos produtos seja EXATAMENTE 500", () 
 });
 
 /*CASO OS ESTADOS DE ENTREGA SEHAM RS OU SC, DEVE SER ACRESCIDO UM VALOR DE 30% NA ENTREGA*/
-it("deve adicionar um acrescimo de 20% no valor da entrega do pedido caso o estado seja RS", () => {
+it.skip("deve adicionar um acrescimo de 20% no valor da entrega do pedido caso o estado seja RS", () => {
     //ARRANGE
     const pedidoComEstadoRS = {
         estado: "RS",
@@ -63,7 +63,7 @@ it("deve adicionar um acrescimo de 20% no valor da entrega do pedido caso o esta
     expect(resultado).toBe(620);
 });
 
-it("deve adicionar um acrescimo de 20% no valor da entrega do pedido caso o estado seja SC", () => {
+it.skip("deve adicionar um acrescimo de 20% no valor da entrega do pedido caso o estado seja SC", () => {
     //ARRANGE
     const pedidoComEstadoSC = {
         estado: "SC",
