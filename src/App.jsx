@@ -1,5 +1,3 @@
-import "./App.css";
-
 function App() {
     const meuPedido = {
         itens: [
@@ -28,7 +26,12 @@ function App() {
 
     console.log(calcularValorPedido(meuPedido));
 
-    return <div>teste</div>;
+    return (
+        <div>
+            <h1>Hello world!</h1>
+            <p>Lets learn more about testing in React</p>
+        </div>
+    );
 }
 
 export default App;
