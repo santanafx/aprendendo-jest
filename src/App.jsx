@@ -37,7 +37,10 @@ function App() {
         <div>
             <h1>Hello world!</h1>
             <p>{message}</p>
-            <button onClick={() => setMessage("New message!")}>
+            <button
+                style={{ backgroundColor: "red", color: "white" }}
+                onClick={() => setMessage("New message!")}
+            >
                 Change message
             </button>
         </div>
